@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tutorial</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    let cars = ["bmw", "volvo", "honda"];
+    document.getElementById("demo").innerHTML = cars;
+
+//Acceess an array item
+    let bmw = cars[0];
+    document.getElementById("demo").innerHTML = bmw;
+
+//Array length property
+    let len = cars.length;
+    document.getElementById("demo").innerHTML = len;
+
+//Acceess last array item   
+    let last = cars[cars.length - 1];
+    document.getElementById("demo").innerHTML = last;
+
+//Array method: 1. toString():convert an array into string
+    document.getElementById("demo").innerHTML = cars;
+
+//2. pop(): remove the last element from an array
+    let last1 = cars.pop();
+    document.getElementById("demo").innerHTML = last1;
+    let last2 = cars[cars.length - 1];
+    console.log(last2);
+
+//3. push():add new element at the end of array   
+    cars.push("Audi"); 
+    document.getElementById("demo").innerHTML = cars;
+
+//4. shift(): remove the first element from an array
+    cars.shift(); 
+    document.getElementById("demo").innerHTML = cars;
+
+//5. unshift(): add an element at the beginning of an array
+    cars.unshift("Hyundai"); 
+    document.getElementById("demo").innerHTML = cars;    
+
+//6. concat(): create a new array by merging existing array
+    let bikes = ["yamaha", "suzuki", "royal enfield"]
+    let vehicles = cars.concat(bikes);
+    document.getElementById("demo").innerHTML = vehicles;
+
+//7. sort(): sort an array in ascending order
+    vehicles.sort();
+    document.getElementById("demo").innerHTML = vehicles;
+
+//8. reverse(): reverse the element of an array
+    vehicles.reverse();
+    document.getElementById("demo").innerHTML = vehicles;
+
+//MAP, REDUCE AND FILTER
+//array.map()
+    let num1 = [2, 3, 4, 5, 6, 7];
+    let num2 = num1.map(multiply);
+    function multiply(value){
+        return value *2;
+    }
+    document.getElementById("demo").innerHTML = num2;
+
+//array.filter()
+    let num3 = num1.filter(comp);
+    function comp(value){
+        return value >4;
+    }
+    document.getElementById("demo").innerHTML = num3;
+
+//array.reduce()
+    let num4 = num1.reduce(sum);
+    function sum(total, value){
+        return total + value;
+    }
+    document.getElementById("demo").innerHTML = num4;
+
+</script>
+</html>
